@@ -14,8 +14,6 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.SearchPeopleRequest
 
 
 fun <K> AppCompatActivity.observeEvent(

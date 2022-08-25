@@ -9,11 +9,10 @@ import com.example.testapplication.domain.usecases.FetchOfflinePeopleListUseCase
 import com.example.testapplication.domain.usecases.FetchPeopleUseCase
 import com.example.testapplication.domain.usecases.SearchPeopleUseCase
 import com.example.testapplication.domain.usecases.UpdateOfflinePeopleListUseCase
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.QueryPeopleRequest
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.SearchPeopleRequest
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemModel
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemResponse
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleListModel
+import com.example.testapplication.domain.models.request.SearchPeopleRequest
+import com.example.testapplication.feature.model.PeopleItemModel
+import com.example.testapplication.domain.models.response.PeopleItemResponse
+import com.example.testapplication.feature.model.PeopleListModel
 
 class SearchViewModel(
     val fetchPeopleUseCase: FetchPeopleUseCase,

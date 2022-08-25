@@ -4,7 +4,7 @@ import android.view.View
 import com.example.testapplication.base_component.base_classes.BaseViewHolder
 import com.example.testapplication.base_component.base_interface.BaseModel
 import com.example.testapplication.databinding.ListItemPeopleBinding
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemModel
+import com.example.testapplication.feature.model.PeopleItemModel
 
 class PeopleViewHolder(
     val vhBinding : ListItemPeopleBinding,

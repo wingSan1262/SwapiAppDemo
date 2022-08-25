@@ -1,12 +1,10 @@
 package com.example.testapplication.data.remote_repository
 
-import com.example.testapplication.base_component.entities.ResourceState
-import vanrrtech.app.ajaib_app_sample.data.SQDb.github.PeopleItemDao
-import vanrrtech.app.ajaib_app_sample.data.remote_repository.SwapiRetrofitInterface
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.QueryPeopleRequest
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.SearchPeopleRequest
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemResponse
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.SearchPeopleResponse
+import com.example.testapplication.data.local_db.PeopleItemDao
+import com.example.testapplication.domain.models.request.QueryPeopleRequest
+import com.example.testapplication.domain.models.request.SearchPeopleRequest
+import com.example.testapplication.domain.models.response.PeopleItemResponse
+import com.example.testapplication.domain.models.response.SearchPeopleResponse
 
 class SwapiApiImpl(
     val swapiRetrofitInterface: SwapiRetrofitInterface,

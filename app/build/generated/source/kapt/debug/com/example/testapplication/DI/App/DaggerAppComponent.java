@@ -9,6 +9,9 @@ import com.example.testapplication.DI.Activity.ActivityModule_SearchViewModelFac
 import com.example.testapplication.DI.Activity.ViewBinderFactory.ViewBinderFactory;
 import com.example.testapplication.DI.Activity.ViewModelProducer.VmFactory;
 import com.example.testapplication.base_component.base_classes.BaseActivity_MembersInjector;
+import com.example.testapplication.data.local_db.LocalDb;
+import com.example.testapplication.data.local_db.PeopleItemDao;
+import com.example.testapplication.data.remote_repository.RemoteApiRetrofitClient;
 import com.example.testapplication.data.remote_repository.SwapiApiInterface;
 import com.example.testapplication.domain.usecases.FetchOfflinePeopleListUseCase;
 import com.example.testapplication.domain.usecases.FetchPeopleUseCase;
@@ -24,9 +27,6 @@ import javax.inject.Provider;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import vanrrtech.app.ajaib_app_sample.data.SQDb.github.LocalDb;
-import vanrrtech.app.ajaib_app_sample.data.SQDb.github.PeopleItemDao;
-import vanrrtech.app.ajaib_app_sample.data.remote_repository.RemoteApiRetrofitClient;
 
 @DaggerGenerated
 @SuppressWarnings({

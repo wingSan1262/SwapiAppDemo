@@ -1,4 +1,4 @@
-package vanrrtech.app.ajaib_app_sample.domain.data_model.github.response
+package com.example.testapplication.domain.models.response
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

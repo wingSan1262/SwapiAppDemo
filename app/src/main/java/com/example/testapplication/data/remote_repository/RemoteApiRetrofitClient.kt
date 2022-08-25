@@ -1,4 +1,4 @@
-package vanrrtech.app.ajaib_app_sample.data.remote_repository
+package com.example.testapplication.data.remote_repository
 
 import retrofit2.Retrofit
 

@@ -2,11 +2,11 @@
 package com.example.testapplication.DI.App;
 
 import android.app.Application;
+import com.example.testapplication.data.local_db.LocalDb;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.inject.Provider;
-import vanrrtech.app.ajaib_app_sample.data.SQDb.github.LocalDb;
 
 @DaggerGenerated
 @SuppressWarnings({

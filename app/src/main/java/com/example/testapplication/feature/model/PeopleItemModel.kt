@@ -1,7 +1,8 @@
-package vanrrtech.app.ajaib_app_sample.domain.data_model.github.response
+package com.example.testapplication.feature.model
 
 import com.example.testapplication.base_component.base_interface.BaseModel
-import com.google.gson.annotations.SerializedName
+import com.example.testapplication.domain.models.response.PeopleItemResponse
+import com.example.testapplication.domain.models.response.SearchPeopleResponse
 import java.io.Serializable
 
 data class PeopleListModel(

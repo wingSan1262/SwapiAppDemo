@@ -1,10 +1,10 @@
-package vanrrtech.app.ajaib_app_sample.data.SQDb.github
+package com.example.testapplication.data.local_db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemResponse
+import com.example.testapplication.domain.models.response.PeopleItemResponse
 
 @Database(entities = [PeopleItemResponse::class], exportSchema = false, version = 1)
 public abstract class LocalDb() : RoomDatabase() {

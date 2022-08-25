@@ -7,7 +7,6 @@ import com.example.testapplication.domain.usecases.SearchPeopleUseCase
 import com.example.testapplication.domain.usecases.UpdateOfflinePeopleListUseCase
 import dagger.Module
 import dagger.Provides
-import vanrrtech.app.ajaib_app_sample.data.remote_repository.RemoteApiRetrofitClient
 
 @Module
 class UseCasesModules() {

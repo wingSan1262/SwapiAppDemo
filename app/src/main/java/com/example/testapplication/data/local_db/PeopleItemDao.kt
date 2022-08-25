@@ -1,7 +1,7 @@
-package vanrrtech.app.ajaib_app_sample.data.SQDb.github
+package com.example.testapplication.data.local_db
 
 import androidx.room.*
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemResponse
+import com.example.testapplication.domain.models.response.PeopleItemResponse
 
 @Dao
 interface PeopleItemDao {

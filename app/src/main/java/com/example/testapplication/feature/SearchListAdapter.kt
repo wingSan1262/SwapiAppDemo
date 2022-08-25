@@ -6,7 +6,7 @@ import com.example.testapplication.base_component.base_classes.BaseAdapter
 import com.example.testapplication.base_component.base_classes.BaseViewHolder
 import com.example.testapplication.base_component.base_interface.BaseModel
 import com.example.testapplication.databinding.ListItemPeopleBinding
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleItemResponse
+import com.example.testapplication.domain.models.response.PeopleItemResponse
 
 class SearchListAdapter
     : BaseAdapter<BaseViewHolder<BaseModel>>() {

@@ -3,7 +3,6 @@ package com.example.testapplication.feature
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.testapplication.base_component.base_classes.BaseActivity
 import com.example.testapplication.base_component.entities.ResourceState
 import com.example.testapplication.base_component.extension.*
@@ -13,8 +12,8 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.request.SearchPeopleRequest
-import vanrrtech.app.ajaib_app_sample.domain.data_model.github.response.PeopleListModel
+import com.example.testapplication.domain.models.request.SearchPeopleRequest
+import com.example.testapplication.feature.model.PeopleListModel
 import javax.inject.Inject
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
