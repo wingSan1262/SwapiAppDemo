@@ -8,6 +8,16 @@ import com.example.testapplication.domain.usecases.UpdateOfflinePeopleListUseCas
 import dagger.Module
 import dagger.Provides
 
+
+/**
+ * UseCase Module
+ * Which AppScoped
+ *
+ * i think usecase is better to be available on all app or module
+ * if you have better idea please modify
+ *
+ * @see AppComponent
+ */
 @Module
 class UseCasesModules() {
 

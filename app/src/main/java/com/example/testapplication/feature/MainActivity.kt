@@ -58,7 +58,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
             searchField.textChanges()?.debounce(400)?.onEach { s ->
                 searchViewModel.currentPage = 1
-                if (s.isNullOrBlank()) {
+                if (s.isNullOrBlank()) { // user clear search field
                     if(searchViewModel.currentQuerySearch.isEmpty()){
                         searchViewModel.searchPeopleData(
                             SearchPeopleRequest(
@@ -69,6 +69,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         return@onEach
                     }
                 }
+                // user search someting
                 searchViewModel.currentQuerySearch = s.toString()
                 searchViewModel.searchPeopleData(
                     SearchPeopleRequest(
@@ -86,15 +87,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             return
         }
         if(searchViewModel.currentPage <= 1)
-            adapter.clearList()
+            adapter.clearList() // clear if freshly open or start new search
 
-        searchViewModel.maxCount = data.count
+        searchViewModel.maxCount = data.count // max count
         lifecycleScope.launch {
             withBinding {
                 showLoading()
                 listRv.setVisibility(true)
             }
             data.results?.let {
+                // Effect by showing each by each when first open
                 if(searchViewModel.currentQuerySearch.isEmpty() && searchViewModel.isFirstOpen)
                     it?.asReversed()?.forEach {
                         adapter?.insertAtTop(it)
@@ -103,11 +105,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     } else adapter?.insertAll(it)
             }
             searchViewModel.isFirstOpen = false
-//            delay(3000)
             searchViewModel.isQuerying = false
         }
     }
 
+    /**
+     * show loading and automatically dismiss it
+     */
     fun showLoading(){
         lifecycleScope.launch {
             withBinding { cvLoading.setVisibility(true)}

@@ -6,6 +6,14 @@ import com.example.testapplication.domain.models.request.SearchPeopleRequest
 import com.example.testapplication.domain.models.response.PeopleItemResponse
 import com.example.testapplication.domain.models.response.SearchPeopleResponse
 
+/**
+ * class that handle all SwapiApi call
+ * Add all new api related to Swapi here
+ * also dont forget add the
+ * @see SwapiApiInterface
+ * @see SwapiRetrofitInterface
+ * @see RemoteApiRetrofitClient
+ */
 class SwapiApiImpl(
     val swapiRetrofitInterface: SwapiRetrofitInterface,
     val dao: PeopleItemDao

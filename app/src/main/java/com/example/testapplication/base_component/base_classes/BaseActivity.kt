@@ -35,6 +35,9 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         setContentView(viewBinding.root)
     }
 
+    /**
+     * helper for accessing binding component directly
+     */
     fun withBinding(block: (VB.() -> Unit)): VB{
         val bindingAfterRunning: VB = viewBinding.apply { block.invoke(this) }
         return bindingAfterRunning

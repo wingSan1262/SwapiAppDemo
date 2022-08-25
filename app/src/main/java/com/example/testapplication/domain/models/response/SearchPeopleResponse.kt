@@ -6,6 +6,10 @@ import com.example.testapplication.base_component.base_interface.BaseModel
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
+/**
+ * Basic request model for api call
+ * if needed please add new parser on your local feature module
+ */
 
 data class SearchPeopleResponse(
     @SerializedName("count")

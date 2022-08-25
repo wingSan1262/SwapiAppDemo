@@ -62,6 +62,7 @@ fun setup() {
 
 @Test
 fun callApi_fetchUserList_invokedCorrectlyAndSuccess(){
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val req = SearchPeopleRequest("hi", 1)
     val res = SearchPeopleResponse(
@@ -76,12 +77,14 @@ fun callApi_fetchUserList_invokedCorrectlyAndSuccess(){
     }
     runTest {
         coEvery { mApi.searchPeopleList(capture(slot))}.returns(res)
-        SUT?.searchPeopleData(req)
+        SUT?.searchPeopleData(req) // ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+
+        // Assertion
         coVerify(exactly = 1){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
         if((result is ResourceState.Success)){
@@ -96,6 +99,7 @@ fun callApi_fetchUserList_invokedCorrectlyAndSuccess(){
 }
 @Test
 fun callApi_fetchUserList_currentPageUpdateCache(){
+    // arrange
     SUT.currentPage = 1
     val slot = slot<SearchPeopleRequest>()
     val slot2 = slot<List<PeopleItemResponse>>()
@@ -114,12 +118,15 @@ fun callApi_fetchUserList_currentPageUpdateCache(){
     runTest {
         coEvery { mApi.searchPeopleList(capture(slot))}.returns(res)
         coEvery { mApi.setOfflineCachePeopleList(capture(slot2))}.returns(true)
-        SUT?.searchPeopleData(req)
+
+        SUT?.searchPeopleData(req) // ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+
+        // ASSERTION
         coVerify(exactly = 1){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
         if((result is ResourceState.Success)){
@@ -137,6 +144,7 @@ fun callApi_fetchUserList_currentPageUpdateCache(){
 }
 @Test
 fun callApi_fetchUserList_notStartingPageNotUpdateCache(){
+    //ARRANGE
     SUT.currentPage = 2
     val slot = slot<SearchPeopleRequest>()
     val req = SearchPeopleRequest("hi", SUT.currentPage)
@@ -153,12 +161,14 @@ fun callApi_fetchUserList_notStartingPageNotUpdateCache(){
 
     runTest {
         coEvery { mApi.searchPeopleList(capture(slot))}.returns(res)
-        SUT?.searchPeopleData(req)
+        SUT?.searchPeopleData(req) //  ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+
+        //ASSERTION
         coVerify(exactly = 1){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
         if((result is ResourceState.Success)){
@@ -174,6 +184,7 @@ fun callApi_fetchUserList_notStartingPageNotUpdateCache(){
 }
 @Test
 fun callApi_fetchUserList_errorThrown(){
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val req = SearchPeopleRequest("hi", 1)
     val res = SearchPeopleResponse(
@@ -188,12 +199,13 @@ fun callApi_fetchUserList_errorThrown(){
     }
     runTest {
         coEvery{mApi.searchPeopleList(capture(slot))}.throws(Throwable("something error"))
-        SUT?.searchPeopleData(req)
+        SUT?.searchPeopleData(req) // ACT
         for(i in 0..5){
             delay(250)
             if(isNotified)
                 break
         }
+        // ASSERTION
         coVerify(exactly = 1){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
         if((result is ResourceState.Failure)){
@@ -207,6 +219,7 @@ fun callApi_fetchUserList_errorThrown(){
 }
 @Test
 fun callApi_fetchUserList_apiReturnNull(){
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val req = SearchPeopleRequest("hi", 1)
     val res = SearchPeopleResponse(
@@ -221,12 +234,13 @@ fun callApi_fetchUserList_apiReturnNull(){
     }
     runTest {
         coEvery{mApi.searchPeopleList(capture(slot))}.returns(null)
-        SUT?.searchPeopleData(req)
+        SUT?.searchPeopleData(req)// ACT
         for(i in 0..5){
             delay(250)
             if(isNotified)
                 break
         }
+        //ASSERTION
         coVerify(exactly = 1){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
         if((result is ResourceState.Failure)){
@@ -241,6 +255,7 @@ fun callApi_fetchUserList_apiReturnNull(){
 
 @Test
 fun callApi_updateOfflineCachingPeople_invokedCorrectlyAndSuccess(){
+    // ARRANGE
     val slot = slot<List<PeopleItemResponse>>()
     val req = listOf(PeopleItemResponse(name = "hi"))
     var isNotified = false
@@ -252,12 +267,14 @@ fun callApi_updateOfflineCachingPeople_invokedCorrectlyAndSuccess(){
     }
     runTest {
         coEvery { mApi.setOfflineCachePeopleList(capture(slot))}.returns(true)
-        SUT?.updateOfflineCachingPeople(req)
+        SUT?.updateOfflineCachingPeople(req)// ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+
+        //ASSERTION
         coVerify(exactly = 1){mApi.setOfflineCachePeopleList(any())}
         coVerify(exactly = 0){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
@@ -273,6 +290,7 @@ fun callApi_updateOfflineCachingPeople_invokedCorrectlyAndSuccess(){
 }
 @Test
 fun callApi_updateOfflineCachingPeople_errorThrown(){
+    // ARRANGE
     val slot = slot<List<PeopleItemResponse>>()
     val req = listOf(PeopleItemResponse(name = "hi"))
     var isNotified = false
@@ -284,12 +302,14 @@ fun callApi_updateOfflineCachingPeople_errorThrown(){
     }
     runTest {
         coEvery { mApi.setOfflineCachePeopleList(capture(slot))}.throws(Throwable("some error"))
-        SUT?.updateOfflineCachingPeople(req)
+        SUT?.updateOfflineCachingPeople(req) // ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+
+        // ASSERTION
         coVerify(exactly = 1){mApi.setOfflineCachePeopleList(any())}
         coVerify(exactly = 0){mApi.searchPeopleList(any())}
         assertThat(req, `is`(slot.captured))
@@ -307,6 +327,7 @@ fun callApi_updateOfflineCachingPeople_errorThrown(){
 
 @Test
 fun callApi_fetchOfflineCachePeopleList_invokedCorrectlyAndSuccess(){
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val res = SearchPeopleResponse(
         1, listOf(PeopleItemResponse(name = "hi"))
@@ -322,10 +343,12 @@ fun callApi_fetchOfflineCachePeopleList_invokedCorrectlyAndSuccess(){
     runTest {
 
         coEvery { mApi.getOfflinePeopleList()}.returns(listOf(PeopleItemResponse(name = "hi")))
-        SUT?.fetchOfflineCachePeopleList()
+        SUT?.fetchOfflineCachePeopleList() // ACT
         while(!isNotified){
             delay(500)
         }
+
+        // ASSERTION
         coVerify(exactly = 1){mApi.getOfflinePeopleList()}
         if((result is ResourceState.Success)){
             assertThat(
@@ -340,6 +363,7 @@ fun callApi_fetchOfflineCachePeopleList_invokedCorrectlyAndSuccess(){
 }
 @Test
 fun callApi_fetchOfflineCachePeopleList_errorThrown(){
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val res = SearchPeopleResponse(
         1, listOf(PeopleItemResponse(name = "hi"))
@@ -353,12 +377,13 @@ fun callApi_fetchOfflineCachePeopleList_errorThrown(){
     }
     runTest {
         coEvery { mApi.getOfflinePeopleList()}.throws(Throwable("an error"))
-        SUT?.fetchOfflineCachePeopleList()
+        SUT?.fetchOfflineCachePeopleList() // ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+        // ASSERTION
         coVerify(exactly = 1){mApi.getOfflinePeopleList()}
         coVerify(exactly = 0){mApi.getPeopleList(any())}
         coVerify(exactly = 0){mApi.setOfflineCachePeopleList(any())}
@@ -374,6 +399,8 @@ fun callApi_fetchOfflineCachePeopleList_errorThrown(){
 
 @Test
 fun callApi_fetchOfflineCachePeopleList_nullResult(){
+
+    // ARRANGE
     val slot = slot<SearchPeopleRequest>()
     val res = SearchPeopleResponse(
         1, listOf(PeopleItemResponse(name = "hi"))
@@ -387,12 +414,13 @@ fun callApi_fetchOfflineCachePeopleList_nullResult(){
     }
     runTest {
         coEvery { mApi.getOfflinePeopleList()}.returns(null)
-        SUT?.fetchOfflineCachePeopleList()
+        SUT?.fetchOfflineCachePeopleList() // ACT
         for(i in 0..5) {
             delay(250)
             if(isNotified)
                 break
         }
+        // ASSERTION
         coVerify(exactly = 1){mApi.getOfflinePeopleList()}
         coVerify(exactly = 0){mApi.getPeopleList(any())}
         coVerify(exactly = 0){mApi.setOfflineCachePeopleList(any())}
@@ -408,7 +436,8 @@ fun callApi_fetchOfflineCachePeopleList_nullResult(){
 
 @Test
 fun onDestroy_jobAllCancel(){
-    SUT.onDestroy()
+    SUT.onDestroy() // ACT
+    // ASSERTION
     assertThat(fetchPeopleUseCase!!.isCancelled(), `is`(true))
     assertThat(searchPeopleUseCase!!.isCancelled(), `is`(true))
     assertThat(fetchOfflinePeopleListUseCase!!.isCancelled(), `is`(true))
@@ -417,6 +446,7 @@ fun onDestroy_jobAllCancel(){
 
 @Test
 fun jobActiveAtIdle(){
+    // ASSERTION
     assertThat(fetchPeopleUseCase!!.isCancelled(), `is`(false))
     assertThat(searchPeopleUseCase!!.isCancelled(), `is`(false))
     assertThat(fetchOfflinePeopleListUseCase!!.isCancelled(), `is`(false))
@@ -425,6 +455,7 @@ fun jobActiveAtIdle(){
 
 @Test
 fun checkParamAtStart(){
+    // ASSERTON
     assertThat(SUT.isFirstOpen, `is`(true))
     assertThat(SUT.isQuerying, `is`(false))
     assertThat(SUT.maxCount, `is`(0))
@@ -434,6 +465,7 @@ fun checkParamAtStart(){
 
 @Test
 fun checkParamAfterChange(){
+    //ARRANGE
     SUT.run {
         isFirstOpen = false // for the sake theatrical list opening hehe
         isQuerying = true
@@ -442,7 +474,7 @@ fun checkParamAfterChange(){
         currentQuerySearch = "some"
     }
 
-
+    // ASSERTION
     assertThat(SUT.isFirstOpen, `is`(false))
     assertThat(SUT.isQuerying, `is`(true))
     assertThat(SUT.maxCount, `is`(82))

@@ -47,6 +47,9 @@ public final class MainActivity extends com.example.testapplication.base_compone
     com.example.testapplication.feature.model.PeopleListModel data) {
     }
     
+    /**
+     * show loading and automatically dismiss it
+     */
     public final void showLoading() {
     }
     

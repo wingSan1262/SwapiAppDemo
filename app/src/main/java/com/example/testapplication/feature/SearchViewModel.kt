@@ -14,6 +14,13 @@ import com.example.testapplication.feature.model.PeopleItemModel
 import com.example.testapplication.domain.models.response.PeopleItemResponse
 import com.example.testapplication.feature.model.PeopleListModel
 
+/**
+ * view model for Searching Functions
+ *
+ * dont forget to call onDestroy() when the dependant is destroyed
+ * TODO also . . . maybe it's a good thing to pass the lifeCycleScope to usecase as Coroutine Scope
+ *
+ */
 class SearchViewModel(
     val fetchPeopleUseCase: FetchPeopleUseCase,
     val searchPeopleUseCase: SearchPeopleUseCase,

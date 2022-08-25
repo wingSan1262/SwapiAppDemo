@@ -69,6 +69,9 @@ public abstract class BaseActivity<VB extends androidx.viewbinding.ViewBinding> 
     android.os.Bundle savedInstanceState) {
     }
     
+    /**
+     * helper for accessing binding component directly
+     */
     @org.jetbrains.annotations.NotNull()
     public final VB withBinding(@org.jetbrains.annotations.NotNull()
     kotlin.jvm.functions.Function1<? super VB, kotlin.Unit> block) {

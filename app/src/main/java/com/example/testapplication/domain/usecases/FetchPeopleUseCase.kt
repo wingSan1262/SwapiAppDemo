@@ -6,6 +6,12 @@ import kotlinx.coroutines.launch
 import com.example.testapplication.domain.models.request.QueryPeopleRequest
 import com.example.testapplication.domain.models.response.SearchPeopleResponse
 
+/**
+ * API usecase wrapper
+ * please subscribe to this livedata usecase
+ *
+ * @see BaseUseCase
+ */
 class FetchPeopleUseCase(
     val api : SwapiApiInterface
 ) : BaseUseCase<QueryPeopleRequest, SearchPeopleResponse>(){

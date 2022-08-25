@@ -15,7 +15,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.onStart
 
-
+/**
+* Extension method to help on observing the event object
+ * to reduce unwanted boiler on view file end
+*/
 fun <K> AppCompatActivity.observeEvent(
     data: LiveData<Event<K>>,
     callback : (K) -> Unit
@@ -27,6 +30,9 @@ fun <K> AppCompatActivity.observeEvent(
     }
 }
 
+/**
+ * converting edit text changed into Coroutine Flow Streams
+ */
 fun EditText.textChanges(): Flow<CharSequence?> {
     return callbackFlow<CharSequence?> {
         val listener = object : TextWatcher {
@@ -42,7 +48,10 @@ fun EditText.textChanges(): Flow<CharSequence?> {
         awaitClose { removeTextChangedListener(listener) }
     }.onStart { emit(text) }
 }
-
+/**
+ * Extension method to add a bottom listener of recycler view
+ * to reduce unwanted boiler on view file end
+ */
 fun RecyclerView.addOnBottomScrollListener(onBottomReached : ()->Unit = {}){
     addOnScrollListener(object : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -61,10 +70,16 @@ fun RecyclerView.addOnBottomScrollListener(onBottomReached : ()->Unit = {}){
     })
 }
 
+/**
+ * Extension method to show snack bar in activity scope
+ */
 fun AppCompatActivity.showSnackBar(view : View, msg : String){
     Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
 }
 
+/**
+ * helper for hiding UI component programatically
+ */
 fun View.setVisibility(boolean: Boolean){
     this.visibility = if(boolean) View.VISIBLE else View.GONE
 }

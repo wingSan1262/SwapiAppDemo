@@ -6,6 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.testapplication.domain.models.response.PeopleItemResponse
 
+/**
+ * this app database calss
+ */
 @Database(entities = [PeopleItemResponse::class], exportSchema = false, version = 1)
 public abstract class LocalDb() : RoomDatabase() {
     companion object {

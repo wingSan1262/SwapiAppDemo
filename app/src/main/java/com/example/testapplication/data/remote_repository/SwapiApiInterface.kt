@@ -5,6 +5,11 @@ import com.example.testapplication.domain.models.request.SearchPeopleRequest
 import com.example.testapplication.domain.models.response.PeopleItemResponse
 import com.example.testapplication.domain.models.response.SearchPeopleResponse
 
+/**
+ * this is interface class for give some abstraction level
+ * on SwapiApi implementation
+ */
+
 interface SwapiApiInterface {
 
     suspend fun getPeopleList(

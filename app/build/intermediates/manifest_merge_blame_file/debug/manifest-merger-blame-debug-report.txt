@@ -31,34 +31,35 @@
 20-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:12:9-54
 21        android:supportsRtl="true"
 21-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:13:9-35
-22        android:theme="@style/Theme.TestApplication" >
-22-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:14:9-53
-23        <activity
-23-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:15:9-23:20
-24            android:name="com.example.testapplication.feature.MainActivity"
-24-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:16:13-49
-25            android:exported="true" >
-25-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:17:13-36
-26            <intent-filter>
-26-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:18:13-22:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:17-69
-27-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:17-77
-29-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:27-74
-30            </intent-filter>
-31        </activity>
-32
-33        <service
-33-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:25:9-28:40
-34            android:name="androidx.room.MultiInstanceInvalidationService"
-34-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:26:13-74
-35            android:directBootAware="true"
-35-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:27:13-43
-36            android:exported="false" />
-36-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:28:13-37
-37    </application>
-38
-39</manifest>
+22        android:testOnly="true"
+23        android:theme="@style/Theme.TestApplication" >
+23-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:14:9-53
+24        <activity
+24-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:15:9-23:20
+25            android:name="com.example.testapplication.feature.MainActivity"
+25-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:16:13-49
+26            android:exported="true" >
+26-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:17:13-36
+27            <intent-filter>
+27-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:18:13-22:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:17-69
+28-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:17-77
+30-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:27-74
+31            </intent-filter>
+32        </activity>
+33
+34        <service
+34-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:25:9-28:40
+35            android:name="androidx.room.MultiInstanceInvalidationService"
+35-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:26:13-74
+36            android:directBootAware="true"
+36-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:27:13-43
+37            android:exported="false" />
+37-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:28:13-37
+38    </application>
+39
+40</manifest>

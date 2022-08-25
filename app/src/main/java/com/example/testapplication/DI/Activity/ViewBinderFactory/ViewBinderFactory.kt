@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.testapplication.feature.MainActivity
 import com.example.testapplication.databinding.ActivityMainBinding
 
+
+/**
+ * standard ViewBinding factory
+ * TODO remove this to dagger ViewModel bindkey feature
+ */
+
 class ViewBinderFactory() {
 
     fun <S> bindViewActivity(modelClass : Class<S>,

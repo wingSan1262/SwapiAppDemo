@@ -1,5 +1,9 @@
 package com.example.testapplication.base_component.entities
 
+/**
+ * Live Data Api call resource result wrapper
+ *
+ */
 sealed class ResourceState<T>{
     data class Success<T>(val body: T, val code: Int = 200) : ResourceState<T>()
 

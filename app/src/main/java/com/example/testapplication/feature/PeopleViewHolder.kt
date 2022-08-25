@@ -6,6 +6,14 @@ import com.example.testapplication.base_component.base_interface.BaseModel
 import com.example.testapplication.databinding.ListItemPeopleBinding
 import com.example.testapplication.feature.model.PeopleItemModel
 
+/**
+ * ViewHolder extends baseViewHolder and BaseModel
+ * @see BaseViewHolder
+ * @See BaseModel
+ *
+ * merit : you can easily create dynamic recycleview :)
+ *
+ */
 class PeopleViewHolder(
     val vhBinding : ListItemPeopleBinding,
     val root : View = vhBinding.root
