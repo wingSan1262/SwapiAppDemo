@@ -1,0 +1,65 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.testapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:7:5-24:19
+14        android:name="com.example.testapplication.MyApplication.MyApplication"
+14-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:8:9-52
+15        android:allowBackup="true"
+15-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:9:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] /Users/user/.gradle/caches/transforms-3/03f14e8fbf87412e41eff9b2875e6dfa/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:10:9-43
+19        android:label="@string/app_name"
+19-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:11:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:12:9-54
+21        android:supportsRtl="true"
+21-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:13:9-35
+22        android:testOnly="true"
+23        android:theme="@style/Theme.TestApplication" >
+23-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:14:9-53
+24        <activity
+24-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:15:9-23:20
+25            android:name="com.example.testapplication.feature.MainActivity"
+25-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:16:13-49
+26            android:exported="true" >
+26-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:17:13-36
+27            <intent-filter>
+27-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:18:13-22:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:17-69
+28-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:19:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:17-77
+30-->/Users/user/SwapiAppDemo/app/src/main/AndroidManifest.xml:21:27-74
+31            </intent-filter>
+32        </activity>
+33
+34        <service
+34-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:25:9-28:40
+35            android:name="androidx.room.MultiInstanceInvalidationService"
+35-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:26:13-74
+36            android:directBootAware="true"
+36-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:27:13-43
+37            android:exported="false" />
+37-->[androidx.room:room-runtime:2.4.1] /Users/user/.gradle/caches/transforms-3/91e30e73bfeecf5548d7f3ef3e982df5/transformed/room-runtime-2.4.1/AndroidManifest.xml:28:13-37
+38    </application>
+39
+40</manifest>

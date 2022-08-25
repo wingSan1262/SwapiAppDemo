@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/user/SwapiAppDemo/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item_people.xml",
+        "source": "/Users/user/SwapiAppDemo/app/src/main/res/layout/list_item_people.xml"
+    },
+    {
+        "merged": "/Users/user/SwapiAppDemo/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/user/SwapiAppDemo/app/src/main/res/layout/activity_main.xml"
+    }
+]
